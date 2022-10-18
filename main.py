@@ -1,6 +1,6 @@
 import requests
 import os
-from datetime import datetime, date, time
+from datetime import datetime, date
 
 
 # -------------------------------------- NUTRITIONIX API ------------------------------------------------ #
@@ -18,7 +18,7 @@ def get_exercise() -> list:
      "gender": "male",
      "weight_kg": 72.5,
      "height_cm": 173,
-     "age": 35
+     "age": 36
     }
     response = requests.post(url=NUTRI_ENDPOINT, headers=NUTRI_HEADERS, json=NUTRI_QUERY)
     response.raise_for_status()
@@ -27,7 +27,7 @@ def get_exercise() -> list:
     return exercises_list
 
 
-# -------------------------------------------- SH+EETY API --------------------------------------------#
+# -------------------------------------------- SHEETY API --------------------------------------------#
 def new_entry(exercises: list):
     auth_header = os.environ.get("AUTH_HEADER")
     headers = {
